@@ -1,21 +1,17 @@
 package com.bonclay.owen.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/api")
-public class SampleRestController {
-    @Value("${appName}")
-    private String appName;
-
+@Controller
+@RequestMapping("/")
+public class SampleViewController {
     @GetMapping
-    public String indexHome() throws Exception {
+    public String index() throws Exception {
         checkedException();
 //        uncheckedException();
-        return appName + " index";
+        return "index";
     }
 
     private void checkedException() throws Exception {
